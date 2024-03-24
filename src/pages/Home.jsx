@@ -61,7 +61,10 @@ const Home = () => {
                   nesciunt rem fugit!
                 </p>
 
-                <motion.button whileTap={{ scale: 1.2 }} className="buy__btn">
+                <motion.button
+                  whileTap={{ scale: 1.2 }}
+                  className="buy__btn text-white"
+                >
                   <Link to="/shop">SHOP NOW</Link>
                 </motion.button>
               </div>
