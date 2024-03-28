@@ -84,15 +84,17 @@ const Header = () => {
             </div>
 
             <div className="nav__icons">
-              <span className="fav__icon">
+              <motion.span whileHover={{ scale: 1.2 }} className="fav__icon">
                 <i class="ri-heart-line"></i>
                 <span className="badge">1</span>
-              </span>
+              </motion.span>
 
-              <span className="cart__icon">
-                <i class="ri-shopping-bag-line"></i>
-                <span className="badge">{totalQuantity}</span>
-              </span>
+              <motion.span whileHover={{ scale: 1.2 }} className="cart__icon">
+                <Link to="/cart">
+                  <i class="ri-shopping-bag-line"></i>
+                  <span className="badge">{totalQuantity}</span>
+                </Link>
+              </motion.span>
 
               <span>
                 <motion.img whileTap={{ scale: 1.2 }} src={userIcon} alt="" />

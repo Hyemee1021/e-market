@@ -47,6 +47,15 @@ const ProductDetails = () => {
 
     const reviewUserName = reviewUser.current.value;
     const reviewUserMsg = reviewMsg.current.value;
+
+    const reviewObj = {
+      userName: reviewUserName,
+      text: reviewUserMsg,
+      rating,
+    };
+
+    console.log(reviewObj);
+    toast.success(`Review submitted.`);
   };
 
   const addToCart = () => {
@@ -140,13 +149,14 @@ const ProductDetails = () => {
                   <div className="review__wrapper">
                     <ul>
                       {reviews?.map((item, index) => (
-                        <li key={index} className="mb-4">
+                        <li key={index} className="mt-5">
                           <h6>John A</h6>
                           <span>{item.rating} (rating)</span>
                           <p>{item.text}</p>
                         </li>
                       ))}
                     </ul>
+
                     <div className="review__form">
                       <h4>Leave your experience</h4>
                       <form action="" onSubmit={submitHandler}>
@@ -155,25 +165,41 @@ const ProductDetails = () => {
                             type="text"
                             placeholder="Enter name"
                             ref={reviewUser}
+                            required
                           />
                         </div>
 
                         <div className="form__group d-flex align-items-center gap-5 rating__group">
-                          <span onClick={() => setRating(1)}>
+                          <motion.span
+                            whileTap={{ scale: 1.2 }}
+                            onClick={() => setRating(1)}
+                          >
                             1 <i className="ri-star-s-fill"></i>
-                          </span>
-                          <span onClick={() => setRating(2)}>
+                          </motion.span>
+                          <motion.span
+                            whileTap={{ scale: 1.2 }}
+                            onClick={() => setRating(2)}
+                          >
                             2 <i className="ri-star-s-fill"></i>
-                          </span>
-                          <span onClick={() => setRating(3)}>
+                          </motion.span>
+                          <motion.span
+                            whileTap={{ scale: 1.2 }}
+                            onClick={() => setRating(3)}
+                          >
                             3 <i className="ri-star-s-fill"></i>
-                          </span>
-                          <span onClick={() => setRating(4)}>
+                          </motion.span>
+                          <motion.span
+                            whileTap={{ scale: 1.2 }}
+                            onClick={() => setRating(4)}
+                          >
                             4 <i className="ri-star-s-fill"></i>
-                          </span>
-                          <span onClick={() => setRating(5)}>
+                          </motion.span>
+                          <motion.span
+                            whileTap={{ scale: 1.2 }}
+                            onClick={() => setRating(5)}
+                          >
                             5 <i className="ri-star-s-fill"></i>
-                          </span>
+                          </motion.span>
                         </div>
                         <p>
                           (<span>{avgRating}</span> rating)
@@ -185,6 +211,7 @@ const ProductDetails = () => {
                             row={4}
                             type="text"
                             placeholder="Review Message.."
+                            required
                           />
                         </div>
 
